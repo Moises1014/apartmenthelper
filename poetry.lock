@@ -1,5 +1,13 @@
 [[package]]
 category = "main"
+description = "Chromedriver for pip."
+name = "chrome-driver"
+optional = false
+python-versions = "*"
+version = "2.26.0.1"
+
+[[package]]
+category = "main"
 description = "NumPy is the fundamental package for array computing with Python."
 name = "numpy"
 optional = false
@@ -74,10 +82,13 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
-content-hash = "932e4155f9a192edf310c4aea31e3019a0da2e760bccba0598a00780f1f8c6b4"
+content-hash = "3c380a08b141a671d0e1d47244f164e254d571dad6cec2fc0a7655bea1268bed"
 python-versions = "^3.8"
 
 [metadata.files]
+chrome-driver = [
+    {file = "chrome-driver-2.26.0.1.tar.gz", hash = "sha256:15a1da46ae86b5b273bce0a1c96b8b4ca8baa90b61c9d5c72d3f7963b4c11c94"},
+]
 numpy = [
     {file = "numpy-1.19.5-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:cc6bd4fd593cb261332568485e20a0712883cf631f6f5e8e86a52caa8b2b50ff"},
     {file = "numpy-1.19.5-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:aeb9ed923be74e659984e321f609b9ba54a48354bfd168d21a2b072ed1e833ea"},

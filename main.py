@@ -1,22 +1,23 @@
-import os
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-op = webdriver.ChromeOptions()
-op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-op.add_argument("--headless")
-op.add_argument("--no-sandbox")
-op.add_argument("--disable-dev-sh-usage")
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
+
+chrome_options = Options()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(options=chrome_options)
 
 SERVER = smtplib.SMTP('smtp.gmail.com', 587)
 EMAIL_USER = ''
 EMAIL_SENT = ''
 EMAIL_PSW = ''
 SUBJECT = 'Apartments in Downtown Orlando'
+
 
 def apartment_bot():
     # Use a breakpoint in the code line below to debug your script.
@@ -62,3 +63,5 @@ def apartment_bot():
     SERVER.sendmail(EMAIL_USER, EMAIL_SENT, msg.as_string())
     SERVER.quit()
     print('email sent')
+
+apartment_bot()
